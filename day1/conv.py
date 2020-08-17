@@ -57,6 +57,7 @@ b * 1 => 11
 123
 """
 
+
 # # Converting a decimal number in a string to a value
 
 # s = "1234"; # 1234 is 0x4d2
@@ -144,7 +145,23 @@ b * 1 => 11
 # Lets convert diferent bases to decimal
 
 def to_decimal(num_string, base):
-    pass
+    # turn num string into a list
+    num_list = list(num_string)
+    # reverse the list
+    num_list.reverse()
+    # set up a sum or value
+    value = 0
+    # loop over the string list
+    for i in range(len(num_list)):
+
+        # increment our sum or value by?
+        # Increment by value at the current index multiplied by the base to the power of the index
+        value += int(num_list[i]) * (base ** i)
+    # return the value
+    return value
+
+
+
 
 print(to_decimal("7b", 16))  # => 123
 print(to_decimal("010111010110101", 2))  # => 123
